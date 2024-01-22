@@ -3,6 +3,10 @@ class GoodDog
     @name = name
   end
   
+  def get_name
+    @name
+  end
+  
   def speak
     "#{@name} says Arf!"
   end
@@ -13,3 +17,6 @@ puts sparky.speak
 
 fido = GoodDog.new("Fido")
 puts fido.speak
+
+puts sparky.get_name
+puts fido.get_name
