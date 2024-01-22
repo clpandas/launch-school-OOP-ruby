@@ -10,3 +10,6 @@ end
 
 sparky = GoodDog.new("Sparky")
 puts sparky.speak
+
+fido = GoodDog.new("Fido")
+puts fido.speak
