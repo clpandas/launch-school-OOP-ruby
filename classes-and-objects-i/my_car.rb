@@ -1,4 +1,6 @@
 class MyCar
+  attr_accessor :color
+  attr_reader :year
   
   def initialize(year, color, model)
     @year = year
@@ -28,12 +30,8 @@ class MyCar
 end
 
 accent = MyCar.new(2007, 'red', 'hyundai accent')
-accent.current_speed
-accent.speed_up(20)
-accent.current_speed
-accent.speed_up(25)
-accent.current_speed
-accent.brake(15)
-accent.current_speed
-accent.shut_off
-accent.current_speed
+p accent
+accent.color = 'black'
+puts accent.color
+puts accent.year
+p accent
