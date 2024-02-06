@@ -1,6 +1,6 @@
 class Foo
   def to_s
-    42
+    "42"
   end
 end
 
