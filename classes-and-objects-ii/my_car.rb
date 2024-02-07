@@ -36,6 +36,11 @@ class MyCar
   def self.gas_mileage(gallons, miles)
     puts "#{miles / gallons} miles per gallon of gas"
   end
+
+  def to_s
+    "My car is a #{color}, #{year}, #{@model}."
+  end
 end
 
-MyCar.gas_mileage(13, 351)
+my_car = MyCar.new("2007", "red", "Hyundai Accent")
+puts my_car
