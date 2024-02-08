@@ -1,6 +1,6 @@
 class MyCar
   attr_accessor :color
-  attr_reader :year
+  attr_reader :year, :model
   
   def initialize(year, color, model)
     @year = year
@@ -38,7 +38,7 @@ class MyCar
   end
 
   def to_s
-    "My car is a #{color}, #{year}, #{@model}."
+    "My car is a #{color}, #{year}, #{model}."
   end
 end
 
