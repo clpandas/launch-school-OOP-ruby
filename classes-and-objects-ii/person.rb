@@ -10,6 +10,6 @@ class Person
 end
 
 bob = Person.new("Steve")
+puts bob.name
 bob.name = "Bob"
-
-puts bob
+puts bob.name
