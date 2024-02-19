@@ -2,11 +2,18 @@ class Vehicle
   attr_accessor :color
   attr_reader :year, :model
   
+  @@number_of_vehicles = 0 
+  
+  def self.number_of_vehicles
+    puts "This program has created #{@@number_of_vehicles} vehicles."
+  end 
+  
   def initialize(year, color, model)
     @year = year
     @color = color
     @model = model
     @current_speed = 0
+    @@number_of_vehicles += 1
   end
 
   def speed_up(number)
@@ -61,3 +68,4 @@ puts my_car
 my_truck = MyTruck.new("2010", "Silver", "Toyota Tacoma")
 puts my_truck
 
+puts Vehicle.number_of_vehicles
