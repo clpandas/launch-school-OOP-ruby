@@ -1,3 +1,9 @@
+module Towable 
+  def can_tow?(pounds)
+    pounds < 2000
+  end
+end
+
 class Vehicle 
   attr_accessor :color
   attr_reader :year, :model
@@ -8,6 +14,10 @@ class Vehicle
     puts "This program has created #{@@number_of_vehicles} vehicles."
   end 
   
+  def self.gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+  
   def initialize(year, color, model)
     @year = year
     @color = color
@@ -15,7 +25,7 @@ class Vehicle
     @current_speed = 0
     @@number_of_vehicles += 1
   end
-
+  
   def speed_up(number)
     @current_speed += number
     puts "You push the gas pedal and accelerate #{number} mph."
@@ -39,10 +49,6 @@ class Vehicle
     self.color = color
     puts "Your car is now the color #{color}."
   end
-  
-  def self.gas_mileage(gallons, miles)
-    puts "#{miles / gallons} miles per gallon of gas"
-  end
 end
 
 class MyCar < Vehicle
@@ -55,6 +61,8 @@ class MyCar < Vehicle
 end
 
 class MyTruck < Vehicle
+  include Towable 
+  
   def to_s
     "My truck is a #{color}, #{year}, #{model}."
   end
@@ -64,8 +72,8 @@ class MyTruck < Vehicle
 end 
 
 my_car = MyCar.new("2007", "red", "Hyundai Accent")
-puts my_car
 my_truck = MyTruck.new("2010", "Silver", "Toyota Tacoma")
-puts my_truck
 
-puts Vehicle.number_of_vehicles
+puts my_truck.can_tow?(500)
+puts my_truck.can_tow?(5000)
+puts my_car.can_tow?(500)
