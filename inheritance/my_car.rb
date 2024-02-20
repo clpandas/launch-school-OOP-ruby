@@ -52,25 +52,35 @@ class Vehicle
 end
 
 class MyCar < Vehicle
+  NUMBER_OF_DOORS = 4
+  
   def to_s
     "My car is a #{color}, #{year}, #{model}."
   end
-  
-  NUMBER_OF_DOORS = 4
-  
 end
 
 class MyTruck < Vehicle
   include Towable 
   
+  NUMBER_OF_DOORS = 2
+  
   def to_s
     "My truck is a #{color}, #{year}, #{model}."
   end
-  
-  NUMBER_OF_DOORS = 2
-
 end 
 
+hyundai = MyCar.new(2007, 'red', 'accent')
+hyundai.speed_up(20)
+hyundai.current_speed
+hyundai.speed_up(20)
+hyundai.current_speed
+hyundai.brake(40)
+hyundai.current_speed
+hyundai.shut_off
+MyCar.gas_mileage(13, 351)
+hyundai.spray_paint("silver")
+puts hyundai
+puts '---'
 puts MyCar.ancestors
 puts '---'
 puts MyTruck.ancestors
