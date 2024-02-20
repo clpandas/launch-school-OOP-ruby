@@ -71,9 +71,8 @@ class MyTruck < Vehicle
 
 end 
 
-my_car = MyCar.new("2007", "red", "Hyundai Accent")
-my_truck = MyTruck.new("2010", "Silver", "Toyota Tacoma")
-
-puts my_truck.can_tow?(500)
-puts my_truck.can_tow?(5000)
-puts my_car.can_tow?(500)
+puts MyCar.ancestors
+puts '---'
+puts MyTruck.ancestors
+puts '---'
+puts Vehicle.ancestors
