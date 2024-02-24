@@ -79,5 +79,5 @@ class MyTruck < Vehicle
   end
 end 
 
-hyundai = MyCar.new(2007, 'red', 'accent')
-puts hyundai.age
+my_car = MyCar.new(2007, 'red', 'hyundai accent')
+puts my_car.age
